@@ -13,3 +13,9 @@ block content
     div(class="col-sm-2 bg-secondary" onclick =`buy(${item})`) #{form.Icecream_quantity}
     div(class="col-sm-2 bg-secondary" onclick =`buy(${item})`) #{form.Icecream_price}
     hr
+  
+    script.
+        function buy(a)
+        {
+           alert(`You purchased Item ${a+1}`)
+        }
