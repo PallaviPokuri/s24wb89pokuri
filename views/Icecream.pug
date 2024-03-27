@@ -2,4 +2,18 @@ extends layout
 
 block content
   h1= title
+  div(class="container-fluid")
   
+    -let results =[{flavour:"Chocolate", toppings:"chocochips", quantity:"15", price:"10"},{flavour:"Butterscotch", toppings:"tootyfrooti", quantity:"20", price:"15"},{flavour:"Vanilla", toppings:"berrychips", quantity:"25", price:"20"},{flavour:"Oreo", toppings:"germs", quantity:"30", price:"25"}]
+  
+  div(class="row")
+   each form,item  in results
+    div(class="col-sm-2" onclick =`buy(${item})`) #{form.flavour}
+    div(class="col-sm-2" onclick =`buy(${item})`) #{form.toppings}
+    div(class="col-sm-2" onclick =`buy(${item})`) #{form.quantity}
+    div(class="col-sm-2" onclick =`buy(${item})`) #{form.price}
+    script.
+        function buy(a)
+        {
+           alert(`You purchased Item ${a+1}`)
+        }
